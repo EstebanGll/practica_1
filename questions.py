@@ -27,7 +27,7 @@ correct_answers_index = [1, 2, 0, 3, 1];
 puntaje = 0;
 
 # El usuario deberá contestar 3 preguntas, question_to_ask creo una lista que contiene a todas
-questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3);
+questions_to_ask = random.sample(list(zip(questions, answers, correct_answers_index)), k=3);
 
 
 #k hace que se seleccionen 3 valores de las que estan conformadas sus listas internas
