@@ -1,4 +1,4 @@
-import random;
+import random, sys;
 
  # Preguntas para el juego
 questions = [
@@ -35,7 +35,20 @@ for _ in range(3):
        
 # El usuario tiene 2 intentos para responder correctamente
     for intento in range(2):
-        user_answer = int(input("Respuesta: "))-1
+        respuesta = input("Respuesta: ");
+        
+        ### verifica si es un digito entre 1 a 4 o sale del programa
+        if respuesta.isdigit():
+            if int(respuesta) >= 1 and int(respuesta) <= 4:
+                user_answer = int(respuesta)-1;
+            else:
+                print("Respuesta no valida");
+                sys.exit(1);
+        else:
+            print("Respuesta no valida");
+            sys.exit(1);
+            
+        
         # Se verifica si la respuesta es correcta
         if user_answer == correct_answers_index[question_index]:
             print("¡Correcto!");
