@@ -7,7 +7,8 @@ Inventario = {
     "esferos": 25
 };
 
-#funcion de menu
+#funciones
+
 def menu():
     
     opciones = ["Agregar producto", "Eliminar producto", "Mostrar inventario", "Salir del Programa"]
@@ -41,30 +42,29 @@ def eliminar_producto(inventario, producto):
     else:
         print("Producto no encontrado.")
 
+#gestiona que opcion se escogio
 def opcion(num, inventario_productos):
     if num == 1:
         producto = input("Ingrese el nombre del producto: ");
         cantidad = input("Ingrese la cantidad: ");
         agregar_producto(inventario_productos, producto, cantidad);
-        return True;
     elif num == 2:
         producto = input("Ingrese el nombre del producto a eliminar: ");
         eliminar_producto(inventario_productos, producto);
-        return True;
     elif num == 3:
         print("Inventario");
         for productos, cantidades in inventario_productos.items():
             print(f"{productos}: {cantidades} unidades");
-        return True;
     else:
-        return False;
-
+        return True;
 
 #Programa Principal
 
 while True:
     seleccion = menu();
-    if not opcion(seleccion, Inventario):
+    if opcion(seleccion, Inventario):
         break;  
 
+print();
 print("Fin del Programa");
+print();
